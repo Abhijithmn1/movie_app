@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<body class="main-layout">
+    <header>
+        <!-- header inner -->
+        <div class="header-top">
+            <div class="header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-1 col-md-2 col-sm-1 ">
+                            
+                            <ul class="top_icon">
+                                <li class="button_login"> <a href="{% url 'movie_app:add_movie' %}">Add Movie</a> </li>
+    <!--                                            <li> <a href="#about">Signup</a> </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header inner -->
+
+            <!-- end header -->
+            <section class="slider_section">
+                <div class="banner_main">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-5 padding_left0">
+                                <nav class="main-menu">
+                                    <ul class="menu-area-main">
+                                        <li class="active"></li>
+                                        {% for i in movie_list %}
+                                        <li> <a href="{% url 'movie_app:detail' i.id %} ">{{i.name}}</a> </li>
+                                        {% endfor %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+           </section>
+        </div>
+    </header>
+
+   <!-- Javascript files-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <!-- sidebar -->
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+</body>
+{% endblock %}

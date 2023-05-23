@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<body>
+    <div class="row">
+      <div class="col-xl-2 col-lg-4 col-md-4 col-sm-9">
+            <ul class="top_icon">
+                <li class="button_login"> <a href="{% url 'movie_app:update' movie.id %}">Edit</a> </li>
+                <li class="button_login"> <a href="{% url 'movie_app:delete' movie.id %}">Delete</a> </li>
+
+            </ul>
+      </div>
+    </div>
+    <!-- We are -->
+    <div id="software" class="We_are">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>{{movie.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                 <div class="col-xl-6 col-lg-4 col-md-4 col-sm-12">
+                     <div class="box_bg">
+                         <div class="box_bg_img">
+                             <figure><img src="{{movie.poster.url}}"></figure>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-xl-6 col-lg-8 col-md-8 col-sm-12 border_right">
+                     <div class="box_text">
+                         <p>{{movie.disc}}</p>
+                         <a>{{movie.year}}</a>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+
